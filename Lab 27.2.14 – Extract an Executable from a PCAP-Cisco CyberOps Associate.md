@@ -108,7 +108,7 @@ Output:
 PE32+ executable (console) x86-64, for MS Windows
 ```
 
-This confirmed that the recovered object was a valid Windows Portable Executable (PE) file.
+This confirmed that the recovered object was a valid Windows Portable Executable (PE) file. 
 
 ---
 
