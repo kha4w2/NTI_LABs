@@ -92,51 +92,22 @@ In this lab, I:
 The lab demonstrated how network forensic analysis can recover transferred files and verify their true identity, rather than relying solely on filenames.
 
 ---
-
 ## Steps
 
-### Step 1 – Open the PCAP in Wireshark
-![Step 1](images/1.png)
-
-### Step 2 – Identify TCP Handshake
-![Step 2](images/2.png)
-
-### Step 3 – Inspect HTTP GET Request
-![Step 3](images/3.png)
-
-### Step 4 – Follow TCP Stream
-![Step 4](images/4.png)
-
-### Step 5 – Review Binary Data
-![Step 5](images/5.png)
-
-### Step 6 – Identify Embedded Strings
-![Step 6](images/6.png)
-
-### Step 7 – Confirm Real Executable
-![Step 7](images/7.png)
-
-### Step 8 – Export HTTP Object
-![Step 8](images/8.png)
-
-### Step 9 – Save the Extracted File
-![Step 9](images/9.png)
-
-### Step 10 – Verify the Saved File
-![Step 10](images/10.png)
-
-### Step 11 – Analyze File Type
-![Step 11](images/11.png)
-
-### Step 12 – Inspect PE Structure
-![Step 12](images/12.png)
-
-### Step 13 – Review Imported Libraries
-![Step 13](images/13.png)
-
-### Step 14 – Examine Suspicious Strings
-![Step 14](images/14.png)
-
-### Step 15 – Final Analysis & Confirmation
-![Step 15](images/15.png)
----
+<p align="center">
+  <img src="images/1.png" width="900"/><br><br>
+  <img src="images/2.png" width="900"/><br><br>
+  <img src="images/3.png" width="900"/><br><br>
+  <img src="images/4.png" width="900"/><br><br>
+  <img src="images/5.png" width="900"/><br><br>
+  <img src="images/6.png" width="900"/><br><br>
+  <img src="images/7.png" width="900"/><br><br>
+  <img src="images/8.png" width="900"/><br><br>
+  <img src="images/9.png" width="900"/><br><br>
+  <img src="images/10.png" width="900"/><br><br>
+  <img src="images/11.png" width="900"/><br><br>
+  <img src="images/12.png" width="900"/><br><br>
+  <img src="images/13.png" width="900"/><br><br>
+  <img src="images/14.png" width="900"/><br><br>
+  <img src="images/15.png" width="900"/>
+</p>
