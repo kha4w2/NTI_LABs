@@ -95,29 +95,48 @@ The lab demonstrated how network forensic analysis can recover transferred files
 
 ## Steps
 
-<img width="1918" height="1010" alt="1" src="https://github.com/user-attachments/assets/02aaf7f8-c76f-475b-a121-412ac0e3511c" />
+### Step 1 – Open the PCAP in Wireshark
+![Step 1](images/1.png)
 
-<img width="1017" height="108" alt="2" src="https://github.com/user-attachments/assets/589b4b91-79ff-4627-b3c8-c6f4821e3f8b" />
+### Step 2 – Identify TCP Handshake
+![Step 2](images/2.png)
 
-<img width="1918" height="1001" alt="3" src="https://github.com/user-attachments/assets/d85d3f84-cec9-4d82-9dd0-c1c15b264b72" />
+### Step 3 – Inspect HTTP GET Request
+![Step 3](images/3.png)
 
+### Step 4 – Follow TCP Stream
+![Step 4](images/4.png)
 
-## Steps
+### Step 5 – Review Binary Data
+![Step 5](images/5.png)
 
-<p align="center">
-  <img src="images/1.png" width="900"/><br><br>
-  <img src="images/2.png" width="900"/><br><br>
-  <img src="images/3.png" width="900"/><br><br>
-  <img src="images/4.png" width="900"/><br><br>
-  <img src="images/5.png" width="900"/><br><br>
-  <img src="images/6.png" width="900"/><br><br>
-  <img src="images/7.png" width="900"/><br><br>
-  <img src="images/8.png" width="900"/><br><br>
-  <img src="images/9.png" width="900"/><br><br>
-  <img src="images/10.png" width="900"/><br><br>
-  <img src="images/11.png" width="900"/><br><br>
-  <img src="images/12.png" width="900"/>
-</p>
+### Step 6 – Identify Embedded Strings
+![Step 6](images/6.png)
 
+### Step 7 – Confirm Real Executable
+![Step 7](images/7.png)
 
+### Step 8 – Export HTTP Object
+![Step 8](images/8.png)
+
+### Step 9 – Save the Extracted File
+![Step 9](images/9.png)
+
+### Step 10 – Verify the Saved File
+![Step 10](images/10.png)
+
+### Step 11 – Analyze File Type
+![Step 11](images/11.png)
+
+### Step 12 – Inspect PE Structure
+![Step 12](images/12.png)
+
+### Step 13 – Review Imported Libraries
+![Step 13](images/13.png)
+
+### Step 14 – Examine Suspicious Strings
+![Step 14](images/14.png)
+
+### Step 15 – Final Analysis & Confirmation
+![Step 15](images/15.png)
 ---
