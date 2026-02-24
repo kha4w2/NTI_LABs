@@ -1,5 +1,3 @@
----
-
 # Lab 27.2.14 – Extract an Executable from a PCAP
 
 ## Cisco CyberOps Associate
