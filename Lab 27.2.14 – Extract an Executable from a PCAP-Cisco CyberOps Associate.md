@@ -96,8 +96,12 @@ The lab demonstrated how network forensic analysis can recover transferred files
 ## Steps
 
 <img width="1918" height="1010" alt="1" src="https://github.com/user-attachments/assets/02aaf7f8-c76f-475b-a121-412ac0e3511c" />
-<img width="1918" height="1010" alt="1" src="https://github.com/user-attachments/assets/02aaf7f8-c76f-475b-a121-412ac0e3511c" />
-![Uploading 1.png…]()
-![Uploading 1.png…]()
+
+<img width="1017" height="108" alt="2" src="https://github.com/user-attachments/assets/589b4b91-79ff-4627-b3c8-c6f4821e3f8b" />
+
+<img width="1918" height="1001" alt="3" src="https://github.com/user-attachments/assets/d85d3f84-cec9-4d82-9dd0-c1c15b264b72" />
+
+
+
 
 ---
