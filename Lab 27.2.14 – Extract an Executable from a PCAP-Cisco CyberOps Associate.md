@@ -1,43 +1,61 @@
-# Lab 27.2.14 – Extract an Executable from a PCAP
+# Lab 27.2.14 – Extracting an Executable from a PCAP
 
 ## Cisco CyberOps Associate
 
+---
+
 ## Overview
 
-In this lab, I performed packet-level network analysis to reconstruct and extract an executable file from a captured PCAP file. The objective was to understand how file downloads occur over HTTP, how TCP streams can be rebuilt, and how analysts can recover transferred files directly from packet captures.
+This lab demonstrates how to perform packet-level network forensic analysis in order to reconstruct and extract an executable file from a captured PCAP file.
 
-The analysis was conducted using the CyberOps Workstation virtual machine and Wireshark.
+The objective was to:
+
+* Understand how file downloads occur over HTTP
+* Analyze TCP session establishment
+* Reconstruct full TCP streams
+* Recover transferred files directly from packet captures
+* Validate the true identity of a downloaded file
+
+The analysis was performed using the CyberOps Workstation virtual machine and Wireshark.
 
 ---
 
 ## Part 1 – Traffic Analysis
 
-The file `nimda.download.pcap` was opened in Wireshark.
+The file `nimda.download.pcap` was opened in Wireshark for inspection.
 
-### TCP and HTTP Analysis
+### TCP & HTTP Inspection
 
-* The first three packets represented the TCP three-way handshake.
-* The fourth packet contained an HTTP GET request for a file named:
+Initial packet review revealed:
 
-  `W32.Nimda.Amm.exe`
+* The first three packets corresponded to the TCP three-way handshake
+* The fourth packet contained an HTTP GET request targeting:
+
+```
+W32.Nimda.Amm.exe
+```
 
 This confirmed that the client initiated a file download over HTTP.
 
-Using **Follow TCP Stream**, I reconstructed the entire TCP conversation between the client and server.
+Using **Follow TCP Stream**, the complete communication between client and server was reconstructed.
 
-### Binary Data Interpretation
+---
 
-Inside the TCP stream:
+### Binary Stream Analysis
 
-* Unreadable symbols appeared because the transferred file was a binary executable.
-* These symbols represent actual file content, not connection noise.
-* Readable words embedded in the stream were executable strings stored inside the binary.
+Within the TCP stream:
 
-Upon reviewing the embedded strings, the executable was identified as:
+* Non-readable characters appeared due to the binary nature of the transferred file
+* These symbols represent raw executable data, not malformed traffic
+* Several readable strings were embedded within the binary content
+
+Upon reviewing the extracted strings, the executable was identified as:
 
 **Microsoft Windows Command Processor (cmd.exe)**
 
-Although the file was named `W32.Nimda.Amm.exe`, analysis showed that it was actually the legitimate Windows `cmd.exe` file that had been renamed. This demonstrates a masquerading technique, where a file is renamed to appear malicious.
+Despite being named `W32.Nimda.Amm.exe`, analysis revealed that the file was actually the legitimate Windows `cmd.exe` executable that had been renamed.
+
+This highlights a common **masquerading technique**, where a legitimate file is renamed to resemble malware.
 
 ---
 
@@ -45,23 +63,40 @@ Although the file was named `W32.Nimda.Amm.exe`, analysis showed that it was act
 
 Using:
 
-**File → Export Objects → HTTP**
+```
+File → Export Objects → HTTP
+```
 
-Wireshark displayed the HTTP objects contained within the TCP stream. Only one file was present in the capture because the packet recording started immediately before the download and stopped right after it completed.
+Wireshark displayed the HTTP objects transmitted within the session.
 
-The file was exported and saved to the `/home/analyst` directory.
+Only one file was present in the capture because:
 
-### Verification
+* The recording started immediately before the download
+* The capture stopped immediately after the transfer completed
 
-Using the command:
+The file was exported and saved to:
+
+```
+/home/analyst
+```
+
+---
+
+## File Verification
+
+File presence was confirmed using:
 
 ```bash
 ls -l
 ```
 
-The file was confirmed to be successfully saved with a size of 345,088 bytes.
+The extracted file size was:
 
-To identify the file type, the following command was executed:
+```
+345,088 bytes
+```
+
+To determine the file type:
 
 ```bash
 file W32.Nimda.Amm.exe
@@ -73,23 +108,24 @@ Output:
 PE32+ executable (console) x86-64, for MS Windows
 ```
 
-This confirmed that the extracted object was a Windows Portable Executable file.
+This confirmed that the recovered object was a valid Windows Portable Executable (PE) file.
 
 ---
 
-## Conclusion
+## Key Takeaways
 
-In this lab, I:
+In this lab, I successfully:
 
-* Analyzed TCP handshake and HTTP traffic
-* Reconstructed a full TCP stream
-* Identified a file download at the packet level
-* Extracted an executable directly from a PCAP file
-* Performed basic static inspection of the file
+* Analyzed TCP handshake mechanics
+* Inspected HTTP file transfer traffic
+* Reconstructed a complete TCP session
+* Extracted an executable directly from a PCAP
+* Verified the true identity of the downloaded file
 
-The lab demonstrated how network forensic analysis can recover transferred files and verify their true identity, rather than relying solely on filenames.
+This exercise demonstrates how network forensic analysis enables analysts to recover transferred artifacts and validate file authenticity beyond filenames alone.
 
 ---
+
 ## Steps
 
 <p align="center">
@@ -109,3 +145,5 @@ The lab demonstrated how network forensic analysis can recover transferred files
   <img src="images/14.png" width="900"/><br><br>
   <img src="images/15.png" width="900"/>
 </p>
+
+---
